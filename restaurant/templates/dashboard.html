@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px 40px;
+            text-align: center;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 40px;
+            color: #333;
+        }
+
+        .hospital-list {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0;
+            list-style: none;
+        }
+
+        .hospital-item {
+            background-color: #fff;
+            margin: 10px 0;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .hospital-details {
+            flex: 1;
+        }
+
+        .hospital-name {
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 5px;
+            color: #007bff;
+        }
+
+        .hospital-email {
+            color: #555;
+            font-size: 14px;
+        }
+
+        .view-button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .view-button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Admin Dashboard</h1>
+</header>
+
+<h2>Registered Hospitals</h2>
+<ul class="hospital-list">
+    {% for email, details in hospitals.items() %}
+    <li class="hospital-item">
+        <div class="hospital-details">
+            <div class="hospital-name">{{ details['name'] }}</div>
+            <div class="hospital-email">{{ email }}</div>
+        </div>
+        <a href="/live_results/{{ email }}" class="view-button">View Live Results</a>
+    </li>
+    {% endfor %}
+</ul>
+
+</body>
+</html>

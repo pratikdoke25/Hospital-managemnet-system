@@ -1,0 +1,133 @@
+/* Center the login card on the screen */
+.login-card {
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Heading styles */
+  .login-heading {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* Form input fields */
+  .login-input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .login-input:focus {
+    outline: none;
+    border-color: #4caf50;
+  }
+  
+  /* Password container */
+  .password-container {
+    position: relative;
+  }
+  
+/* Password toggle button */
+.password-toggle-btn {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+/* Prevent hover effect */
+.password-toggle-btn:hover {
+  background: none; /* Remove any background changes on hover */
+  border: none; /* Remove any border changes on hover */
+  cursor: pointer; /* Maintain the pointer cursor */
+}
+
+  
+/* Login button */
+.login-button {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  color: white;
+  background-color: #4caf50;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-align: center; /* Center the text horizontally */
+  display: flex; /* Enables flexbox */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+
+  
+  .login-button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Toastify container adjustments */
+  .Toastify__toast-container {
+    top: 50px !important;
+    text-align: center;
+  }
+  .password-toggle-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;  /* Adjust the padding to make the button smaller */
+    font-size: 20px;  /* Make the icon size larger if needed */
+    position: absolute;
+    right: 4px;  /* Position the button at the right edge of the password field */
+    top: 50%;  /* Center the button vertically */
+    transform: translateY(-50%);  /* Corrects vertical alignment */
+  }
+  
+  .password-toggle-btn:hover {
+    background-color: transparent; /* Ensure no background change on hover */
+  }
+  
+  /* Style for "Create an account" link */
+  a {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    color: #007bff; /* Blue color for the link */
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline; /* Underline on hover */
+  }
+  /* Style for the paragraph containing the "Create an account" text */
+p {
+    text-align: center;
+    font-size: 16px;
+    color: #333; /* Dark gray text for the paragraph */
+    margin-top: 20px;
+  }
+  
+  /* Style for the "Register" link */
+  .register-link {
+    color: #007bff; /* Blue color for the link */
+    font-weight: bold; /* Make the link text bold */
+    text-decoration: none; /* Remove the underline by default */
+    margin-left: 5px; /* Space between the paragraph text and the link */
+  }
+  
+  .register-link:hover {
+    text-decoration: underline; /* Underline on hover */
+    color: red; /* Darker blue on hover */
+  }
+  

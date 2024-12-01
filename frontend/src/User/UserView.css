@@ -1,0 +1,135 @@
+/* UserView.css */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Navbar and Footer Positioning */
+.navbar {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.footer {
+    margin-top: auto;
+    width: 100%;
+}
+
+/* Hospital List Styling */
+.hospital-list {
+    flex-grow: 1;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hospital-list h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Flex layout for wrapping cards */
+.hospital-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+/* Individual card styling */
+.hospital-card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hospital-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Hospital information */
+.hospital-info h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #007bff;
+}
+
+.hospital-info p {
+    font-size: 1em;
+    margin: 5px 0;
+    color: #555;
+}
+
+/* Badge for available beds */
+.available-beds {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #e7f9e7;
+    color: #333;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: bold;
+    margin-top: 15px;
+    justify-content: center;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hospital-card {
+        padding: 15px;
+        width: calc(100% - 40px);
+        margin: 0 10px;
+    }
+
+    .hospital-info h3 {
+        font-size: 1.3em;
+    }
+
+    .hospital-info p {
+        font-size: 0.9em;
+    }
+}
+
+/* Loading and Empty State */
+.loading, .no-hospitals {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 200px);
+    color: #666;
+    font-size: 1.2em;
+}

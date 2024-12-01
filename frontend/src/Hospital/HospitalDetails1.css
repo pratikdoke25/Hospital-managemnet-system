@@ -1,0 +1,227 @@
+/* Global reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #f4f7f6;
+    line-height: 1.6;
+    color: #333;
+  }
+  
+  .hospital-details-container {
+    max-width: 10000px;
+    margin: 2rem auto;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+  
+  .hospital-details-left {
+    padding: 2rem;
+    position: relative;
+  }
+  
+  /* Heading Styles */
+  .hospital-details-left h1 {
+    color: #2c3e50;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 0.5rem;
+    font-weight: 700;
+  }
+  
+  /* Detail Paragraphs */
+  .hospital-details-left p {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .hospital-details-left p strong {
+    min-width: 150px;
+    color: #2980b9;
+    font-weight: 600;
+  }
+  
+  /* Available Beds Section */
+  .available-beds-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ecf0f1;
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+  }
+  
+  .available-beds-section p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #2c3e50;
+  }
+  
+  /* Buttons */
+  .status-section,
+  .available-beds-section {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+  
+  button {
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Status Button Styles */
+  .status-section button:first-of-type {
+    background-color: #3498db;
+    color: white;
+  }
+  
+  .status-section button:first-of-type:hover {
+    background-color: #2980b9;
+  }
+  
+  .status-section button:last-of-type {
+    background-color: #e74c3c;
+    color: white;
+  }
+  
+  .status-section button:last-of-type:hover {
+    background-color: #c0392b;
+  }
+  
+  /* Update Bed Count Button */
+  .available-beds-section button {
+    background-color: #2ecc71;
+    color: white;
+  }
+  
+  .available-beds-section button:hover {
+    background-color: #27ae60;
+  }
+  
+  /* Modal Styles */
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  .modal-content {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    width: 400px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    animation: slideUp 0.3s ease;
+  }
+  
+  @keyframes slideUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  
+  .modal-content h2 {
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+  }
+  
+  .modal-content input {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 2px solid #3498db;
+    border-radius: 6px;
+    font-size: 1rem;
+  }
+  
+  .modal-content button {
+    width: 100%;
+    margin-bottom: 0.5rem;
+    justify-content: center;
+  }
+  
+  .modal-content button:first-of-type {
+    background-color: #2ecc71;
+    color: white;
+  }
+  
+  .modal-content button:last-of-type {
+    background-color: #e74c3c;
+    color: white;
+  }
+  
+  /* Responsive Design */
+  @media screen and (max-width: 600px) {
+    .hospital-details-container {
+      margin: 1rem;
+      border-radius: 0;
+    }
+  
+    .hospital-details-left {
+      padding: 1rem;
+    }
+  
+    .modal-content {
+      width: 90%;
+      padding: 1rem;
+    }
+  }
+  
+  /* Status Indicator */
+  .status-section p {
+    display: flex;
+    align-items: center;
+  }
+  
+  .status-section p::before {
+    content: '•';
+    color: var(--status-color);
+    font-size: 2rem;
+    margin-right: 0.5rem;
+  }
+  
+  .status-section p:first-of-type {
+    --status-color: var(--active-color, #2ecc71);
+    color: var(--status-color);
+  }
+  
+  .status-section p:first-of-type[data-active="false"] {
+    --status-color: #e74c3c;
+  }

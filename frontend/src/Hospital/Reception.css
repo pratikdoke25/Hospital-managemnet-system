@@ -1,0 +1,91 @@
+/* Card layout */
+.reception-card {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Heading style */
+  .heading {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* Bed controls */
+  .bed-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .bed-info {
+    font-size: 18px;
+    color: #555;
+  }
+  
+  /* Buttons */
+  .button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4caf50;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Input field */
+  .manual-input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .input-field {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .input-field:focus {
+    outline: none;
+    border-color: #4caf50;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 480px) {
+    .reception-card {
+      padding: 15px;
+    }
+  
+    .heading {
+      font-size: 20px;
+    }
+  
+    .button {
+      font-size: 14px;
+      padding: 8px 15px;
+    }
+  
+    .input-field {
+      font-size: 14px;
+    }
+  }
+  
